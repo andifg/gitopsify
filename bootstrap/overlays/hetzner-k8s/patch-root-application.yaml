@@ -1,0 +1,6 @@
+- op: replace
+  path: /spec/source/path
+  value: clusters/overlays/hetzner-k8s
+- op: replace
+  path: /spec/destination/namespace
+  value: argocd
