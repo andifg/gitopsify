@@ -6,6 +6,8 @@ This repository contains GitOps configurations for managing Kubernetes clusters 
 
 ```
 gitopsify/
+├── .cursor/             # Cursor IDE configuration
+│   └── rules/          # Cursor Rules for development guidance
 ├── bootstrap/           # Bootstrap ArgoCD applications
 │   ├── base/           # Base bootstrap configuration
 │   └── overlays/       # Environment-specific overlays
@@ -27,4 +29,3 @@ gitopsify/
 ## Quick Start
 
 To apply the bootstrap application: `kubectl apply -k bootstrap/overlays/hetzner-k8s`
-

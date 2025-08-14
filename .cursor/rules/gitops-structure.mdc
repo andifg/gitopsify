@@ -1,0 +1,27 @@
+---
+alwaysApply: true
+---
+# GitOps Project Structure Guide
+
+This is a GitOps infrastructure management project using ArgoCD and Kustomize. The main structure follows:
+
+## Bootstrap Layer
+- [bootstrap/base/](mdc:bootstrap/base/) - Base bootstrap configuration with root ArgoCD Application
+- [bootstrap/overlays/](mdc:bootstrap/overlays/) - Environment-specific bootstrap overlays (e.g., hetzner-k8s)
+
+## Cluster Configuration
+- [clusters/base/](mdc:clusters/base/) - Base cluster configuration manifests
+- [clusters/overlays/](mdc:clusters/overlays/) - Environment-specific cluster overlays
+
+## Key Files
+- [bootstrap/base/root-application.yaml](mdc:bootstrap/base/root-application.yaml) - Root ArgoCD Application that bootstraps everything
+- [bootstrap/base/kustomization.yaml](mdc:bootstrap/base/kustomization.yaml) - Base kustomization including root application
+- [bootstrap/overlays/hetzner-k8s/kustomization.yaml](mdc:bootstrap/overlays/hetzner-k8s/kustomization.yaml) - Hetzner-specific overlay configuration
+
+## Workflow
+1. Bootstrap base creates root Application with placeholder values
+2. Overlays patch the base to configure environment-specific settings
+3. Root Application deploys cluster configurations from clusters/overlays/
+4. Cluster configs then manage tenant applications
+
+Always check the overlay structure when making changes - base configurations are patched by overlays for environment-specific customization.

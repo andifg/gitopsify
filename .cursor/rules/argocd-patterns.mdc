@@ -1,0 +1,24 @@
+---
+globs: *.yaml,*.yml
+---
+# ArgoCD Application Patterns
+
+## Bootstrap Applications
+- Root Application manages cluster configuration deployment
+- Use `clusters/overlays/<cluster-name>` as source path
+- Set `destination.namespace: argocd` for bootstrap apps
+
+## Application Structure
+- `spec.source.path` - Git repository path to deploy from
+- `spec.destination.namespace` - Target namespace in cluster
+- `spec.syncPolicy.automated` - Enable automatic syncing
+
+## Common Fields
+- `repoURL` - Git repository URL
+- `targetRevision` - Git branch/tag to track
+- `project` - ArgoCD project for organization
+
+## Best Practices
+- Use semantic versioning for targetRevision
+- Enable self-healing with `selfHeal: true`
+- Set appropriate prune policies for cleanup

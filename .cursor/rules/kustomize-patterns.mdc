@@ -1,0 +1,23 @@
+---
+globs: *.yaml,*.yml
+---
+# Kustomize Best Practices
+
+## Patch Patterns
+- Use JSON patches with `op: replace` for precise field updates
+- Target specific resources by `kind` and `name` in patch targets
+- Keep patches focused on single concerns
+
+## Overlay Structure
+- Base contains common resources and configurations
+- Overlays inherit from base and apply environment-specific patches
+- Use `namePrefix`, `nameSuffix`, or patches for resource naming
+
+## Common Commands
+- `kustomize build <overlay-path>` - Build and test overlay
+- `kubectl apply -k <overlay-path>` - Apply overlay to cluster
+
+## File Naming
+- Patch files should be descriptive: `patch-root-application.yaml`
+- Kustomization files must be named exactly `kustomization.yaml`
+- Use consistent naming across overlays for maintainability

@@ -1,0 +1,27 @@
+---
+alwaysApply: true
+---
+# Commit Conventions
+
+## Commit Message Format
+- Make max 2 bullet points about the changes
+- Add comment that the commit was created assisted by cursor
+
+## Example Commit Messages
+```
+feat: add bootstrap overlay for hetzner cluster
+
+- Create hetzner-k8s overlay with namespace and path patches
+- Update kustomization to include patch configuration
+
+# Created with assistance from Cursor
+```
+
+```
+fix: correct patch file reference in kustomization
+
+- Rename patch file from patch-cluster-config-path.yaml to patch-root-application.yaml
+- Update kustomization.yaml to reference correct patch file
+
+# Created with assistance from Cursor
+```
