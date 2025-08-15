@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+helmCharts:
+  - name: dashboard
+    repo: https://kubernetes.github.io/dashboard/
+    version: v7.13.0
+    namespace: k8s-dashboard
+    releaseName: dashboard
+    valuesFile: values.yaml
