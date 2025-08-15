@@ -4,3 +4,6 @@
 - op: replace
   path: /metadata/namespace
   value: argocd
+- op: replace
+  path: /spec/destination/namespace
+  value: argocd
