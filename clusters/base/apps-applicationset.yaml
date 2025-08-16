@@ -20,16 +20,7 @@ spec:
         gitops: operator
     spec:
       project: default
-      syncPolicy:
-        automated:
-          prune: false
-          selfHeal: true
-        retry:
-          limit: 5
-          backoff:
-            duration: 5s
-            factor: 2
-            maxDuration: 20m
+      syncPolicy: {}
       source:
         repoURL: https://github.com/andifg/gitopsify.git
         targetRevision: main
