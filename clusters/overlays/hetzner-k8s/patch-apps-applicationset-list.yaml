@@ -9,8 +9,4 @@ spec:
       - values:
           name: k8s-dasbhoard
           path: components/apps/kubernetes-dashboard/overlays/k8s-default
-  template:
-    spec:
-      destination:
-        server: https://kubernetes.default.svc
-        namespace: argocd
+          namespace: k8s-dashboard
