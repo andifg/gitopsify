@@ -10,3 +10,7 @@ spec:
           name: k8s-dasbhoard
           path: components/apps/kubernetes-dashboard/overlays/k8s-default
           namespace: k8s-dashboard
+      - values:
+          name: cert-manager
+          path: components/apps/cert-manager/overlays/k8s-default
+          namespace: cert-manager
