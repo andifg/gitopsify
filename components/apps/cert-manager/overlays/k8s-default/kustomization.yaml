@@ -3,6 +3,7 @@ kind: Kustomization
 
 resources:
 - ../../base
+- cluster-issuer.yaml
 
 #PATCH NOT WORKING:
 # patches:
