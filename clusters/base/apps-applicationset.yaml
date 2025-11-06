@@ -20,7 +20,9 @@ spec:
         gitops: operator
     spec:
       project: default
-      syncPolicy: {}
+      syncPolicy: 
+        syncOptions:
+        - SkipDryRunOnMissingResource=true
       source:
         repoURL: https://github.com/andifg/gitopsify.git
         targetRevision: main
