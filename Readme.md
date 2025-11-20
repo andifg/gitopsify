@@ -29,3 +29,5 @@ gitopsify/
 ## Quick Start
 
 To apply the bootstrap application: `kubectl apply -k bootstrap/overlays/hetzner-k8s`
+
+-> You might need to create the sealed secret root key and cert secret. Read [this](./components/apps/sealed-secrets/base/Readme.md) for details how to.

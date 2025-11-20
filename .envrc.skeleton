@@ -1,0 +1,6 @@
+# Path to private key for sealed secrets
+export PRIVATEKEY="mytls.key"
+# Path to public key for sealed secrets
+export PUBLICKEY="$PWD/components/apps/sealed-secrets/operator/base/mytls.crt"
+export NAMESPACE="sealed-secrets"
+export SECRETNAME="sealed-secret-cluster-cert"

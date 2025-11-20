@@ -1,2 +1,3 @@
-privat/
-**/bootstrap-keys/
+.privat/
+**/bootstrap/
+**/.envrc
