@@ -1,0 +1,20 @@
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  annotations:
+    sealedsecrets.bitnami.com/cluster-wide: "true"
+  creationTimestamp: null
+  name: aws-s3-creds
+  namespace: velero
+spec:
+  encryptedData:
+    cloud: AgBJiBzNGnkL3SAHCaS+Z85cVR1wWuZV+b+Aej4YialYC15DsAIDSsfbkeH3idJsxNXvh53rQPnUAqie48ArytsPPS5kEv1xWxdld3qVSs0ypg6+8/oIoHK2QK1VL4Gga4TaXFKls6K2vwMolgZiUt5GsXRRe8n659txAHOOI7u0pei78pf5EQz2GkG7g9AR47NzUGEqy5AnMlLKuQRJYK3iFKpWqdPxNDkOvsxKvFEXQpSSBLdk+k7cVvEmVXESCwYA70yoUhE/Zbku4Q7/XyIgGVOFSmpxHGhE5ONVJs64o0Eejvm2epnnQGN/jdKuE3BlpNmsolbLZesZipPG1Mi8nA48sZlyE041o3G9ZjMlHO6mZz5VHQcSGGsyl56PxNpVubNrVCNBYpGBOo4zqcb16y6V8gJAuLAECQ9vLPRUYgr6FkH0kfphLJK2C3ry0jJ80cImH/F2jW0YIibOsYfl5OBV+LJjBTCxBjy3oIszLbCJbgI4r39zrLw2YCQI63AJwJyRHpHlljyj5pCpUmqKNJ+4BmbPgJfudqHqICGK/1fAw3h9exjsRqP3af1n/ATO2S9SvH9l+kEuRCsi1szzlcZTczu2UF1cwZ3gHvpTlWHUqCbdtnqmkA/HsfDry7/7lCT4ZWeqBUFUkOCWIlWgYrvfXJrlPnH1jswnnaiOtGobKMKrgeDXMa3C96w4yWqMBXSuK7kblRa/T5wJ9dz0T76hn8KBaD0vxtzxjgk+yI8o87qFH/6lBP4Woq4UEZay+Dy6cHlTANXEhcL2JH7OASoDK6PyzKjPOXhhn2U2f8OeRRncLauzsHQ9zrJEcYPOWdmjDV0hoceCAM1QOUk=
+  template:
+    metadata:
+      annotations:
+        sealedsecrets.bitnami.com/cluster-wide: "true"
+      creationTimestamp: null
+      name: aws-s3-creds
+      namespace: velero
+    type: Opaque

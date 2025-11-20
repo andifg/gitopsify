@@ -26,3 +26,8 @@ spec:
           path: components/apps/sealed-secrets/overlays/k8s-default
           namespace: sealed-secrets
           syncWave: "1"
+      - values:
+          name: multi-cluster-backup
+          path: tenants/multi-cluster-backup/overlays/k8s-default
+          namespace: sealed-secrets
+          syncWave: "6"

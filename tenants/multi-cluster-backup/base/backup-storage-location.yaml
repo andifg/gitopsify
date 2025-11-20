@@ -1,0 +1,20 @@
+apiVersion: velero.io/v1
+kind: BackupStorageLocation
+metadata:
+  name: default
+  namespace: velero
+spec:
+  backupSyncPeriod: 24h0m0s
+  config:
+    checksumAlgorithm: ''
+    profile: default
+    region: eu-central-1
+  credential:
+    key: cloud
+    name: aws-s3-creds
+  default: true
+  objectStorage:
+    bucket: coffee-app-test-backups
+    prefix: velero
+  provider: velero.io/aws
+  validationFrequency: 24h0m0s
