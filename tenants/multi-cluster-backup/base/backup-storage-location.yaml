@@ -3,10 +3,6 @@ kind: BackupStorageLocation
 metadata:
   name: cloudflare
   namespace: velero
-  annotations:
-    argocd.argoproj.io/ignore-differences: |
-      jsonPointers:
-      - /spec/config/s3Url
 spec:
   backupSyncPeriod: 24h0m0s
   config:

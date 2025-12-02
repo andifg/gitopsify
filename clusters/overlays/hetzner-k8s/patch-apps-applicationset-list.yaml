@@ -6,28 +6,28 @@ spec:
   generators:
   - list:
       elements:
-      - values:
-          name: k8s-dasbhoard
-          path: components/apps/kubernetes-dashboard/overlays/k8s-default
-          namespace: k8s-dashboard
-          syncWave: "6"
-      - values:
-          name: cert-manager
-          path: components/apps/cert-manager/overlays/k8s-default
-          namespace: cert-manager
-          syncWave: "0"
-      - values:
-          name: velero
-          path: components/apps/velero/overlays/k8s-default
-          namespace: velero
-          syncWave: "5"
-      - values:
-          name: sealed-secrets
-          path: components/apps/sealed-secrets/overlays/k8s-default
-          namespace: sealed-secrets
-          syncWave: "1"
-      - values:
-          name: multi-cluster-backup
-          path: tenants/multi-cluster-backup/overlays/k8s-default
-          namespace: sealed-secrets
-          syncWave: "6"
+      - name: k8s-dasbhoard
+        path: components/apps/kubernetes-dashboard/overlays/k8s-default
+        namespace: k8s-dashboard
+        syncWave: "6"
+      - name: cert-manager
+        path: components/apps/cert-manager/overlays/k8s-default
+        namespace: cert-manager
+        syncWave: "0"
+      - name: velero
+        path: components/apps/velero/overlays/k8s-default
+        namespace: velero
+        syncWave: "5"
+      - name: sealed-secrets
+        path: components/apps/sealed-secrets/overlays/k8s-default
+        namespace: sealed-secrets
+        syncWave: "1"
+      - name: multi-cluster-backup
+        path: tenants/multi-cluster-backup/overlays/k8s-default
+        namespace: sealed-secrets
+        syncWave: "6"
+        ignoreDifferences:
+          - group: velero.io
+            kind: BackupStorageLocation
+            jsonPointers:
+            - /spec/config/s3Url

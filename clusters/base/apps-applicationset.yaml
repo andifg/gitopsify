@@ -6,17 +6,18 @@ metadata:
     argocd.argoproj.io/compare-options: IgnoreExtraneous
     argocd.argoproj.io/sync-options: Prune=false
 spec:
+  goTemplate: true
   generators:
     - list:
         elements:
           - patch-me-see-overlays
   template:
     metadata:
-      name: '{{values.name}}'
+      name: '{{.name}}'
       annotations:
         argocd.argoproj.io/compare-options: IgnoreExtraneous
         argocd.argoproj.io/sync-options: Prune=false
-        argocd.argoproj.io/sync-wave: '{{values.syncWave}}'
+        argocd.argoproj.io/sync-wave: '{{.syncWave}}'
       labels:
         gitops: operator
     spec:
@@ -27,7 +28,13 @@ spec:
       source:
         repoURL: https://github.com/andifg/gitopsify.git
         targetRevision: main
-        path: '{{values.path}}'
+        path: '{{.path}}'
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{values.namespace}}'
+        namespace: '{{.namespace}}'
+  templatePatch: |
+    {{- if .ignoreDifferences }}
+    spec:
+      ignoreDifferences:
+    {{ toYaml .ignoreDifferences | indent 6 }}
+    {{- end}}
