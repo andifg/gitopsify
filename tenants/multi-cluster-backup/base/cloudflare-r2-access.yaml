@@ -1,0 +1,19 @@
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  annotations:
+    sealedsecrets.bitnami.com/cluster-wide: "true"
+  name: cloudflare-r2-secret
+  namespace: velero
+spec:
+  encryptedData:
+    cloud: AgAvheNC/lUg7t2hbz3f+M/8UfXMeW0DnMV+jTLJWxsYgU9D4aYNIkKsx+dbD7n1oPSEdfGTCrjCDDOy8J8ye9LWGGP6ZXYyvTMd3t7aqbdY0fEFj4ruOoSnk5Gmh7lGx52x8KrZ0aAAT/0JTxf6m33fvQgXbDtrk/n2GXKb0R0rjqcyYhRSGOf5NhdD+/0dMOKf/cJhQGoqDVMzbKfEtI06rttPss3rsWM0l7T7usCRDe5jxpQy33C+B9VAdcIdeuPeOzr3RvPD0ZgW9tm3Dz5UobeBlrdfk6/mWkTtENPKhj7qUflIwHQn/58CvMVHPMxgQPa9aMaVKLwLdUSxc+LLAhLClHyaRCYizGUVRXh6O0IC0Owrd2dqf/Brh4NCkp0SgUUiCq9PSUihaCb8E1XUoKrLPafMg/bi+uMDzBqIx4SaEuXSX2yipiKyWDAYWnoqcDrWydAdRGAv6uOTY13exPDrXyO3A3Aozu6asq60+J5lQ/imrr6kPkyzzAjJPBQtSNghmh9cafGXMZ8kPkF7qR28oa+E+cQIg42rjlC1MaIaKgvFiUHVB77LghG0hC5+9pB13VNOGrGtuIBSEYb8/gl7CVIovFbqMSK1JsOkp75Vx0WRH9oT985XIfb+/Gwrfjt9cL+fNmZ2aJ3lln2XmOy+Ok/TzTd6lYHD7mQrLHdcgmMIPvNsdi9/kPlzzme2dbEDQYFCPd952p3R8H1ukF8jXZgM96/GCXx4GKe04YwJ6LsvStoGiGmw1QyBEBS3r0WIpWl+DKYSo3DzA0Z1vIrkMVbFl1xJ131n+7UFwsmExXWEk95/cnKCOH3tcZaySdLS3lf8tTPSxyqncc8mt1uSbOvi+wMEKmKZfv7VhEcCQSFQswrs+j0avqwiPCzUvaI=
+  template:
+    metadata:
+      annotations:
+        sealedsecrets.bitnami.com/cluster-wide: "true"
+      creationTimestamp: null
+      name: cloudflare-r2-secret
+      namespace: velero
+    type: Opaque

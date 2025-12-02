@@ -1,0 +1,37 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: velero-bsl-accountid-inject
+  namespace: velero
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+spec:
+  template:
+    spec:
+      serviceAccount: velero-bsl-patcher
+      restartPolicy: Never
+      containers:
+        - name: inject
+          image: bitnami/kubectl:latest
+          env:
+            - name: ACCOUNT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: cloudflare-account-id
+                  key: account_id
+          command:
+            - /bin/sh
+            - -c
+            - |
+              set -e
+              echo "Patching BSL with account ID: ${ACCOUNT_ID}"
+
+              kubectl -n velero patch backupstoragelocation cloudflare \
+                --type=json \
+                -p="[
+                  {\"op\": \"replace\", \"path\": \"/spec/config/s3Url\", \"value\": \"https://${ACCOUNT_ID}.r2.cloudflarestorage.com\"}
+                ]"
+
+              echo "Patch completed."
+              sleep 20

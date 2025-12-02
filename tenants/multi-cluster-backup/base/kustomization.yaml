@@ -3,4 +3,9 @@ kind: Kustomization
 
 resources:
 - aws-s3-access.yaml
+- backup-storage-location-legacy.yaml
 - backup-storage-location.yaml
+- cloudflare-account-id.yaml
+- cloudflare-r2-access.yaml
+- velero-bsl-accountid-inject-hook.yaml
+- hook-sa.yaml

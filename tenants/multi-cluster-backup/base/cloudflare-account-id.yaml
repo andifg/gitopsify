@@ -1,0 +1,18 @@
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  annotations:
+    sealedsecrets.bitnami.com/cluster-wide: "true"
+  name: cloudflare-account-id
+  namespace: velero
+spec:
+  encryptedData:
+    account_id: AgCpd3O/fexUyEkjN0xpot5Y6R9qy9zCSrm3JVLW0kLB6a5a5J3n6CfKdhmfor1QMl/wbBX9kLgT0F0xi2VFfVWrzFCdJr230pd7kptO+uGiFu/+37XhZj6Jgo23Z2jV69vxQRnkLtDtskrqqzclYq+ygFkoSIH6D32HZ8ZSYfi1bFbMaWQ7dRWUpfGfyFJEWED6a6y2Hl5GVFtpeTXWH4oPPFH4f2PgHGdCwtH137qALOlsAGVd87I2tEQQxFBszQ/LcskggAUjN3vKqZSu3PgFjCWVAqUmWeOpUvM3OaUcAb5djOdxuC581Bhjlohc6zsZwhBiLdHcwf6/OtpLcxX1mD1b7JQYuo6VM0t70lDKQX4NqM1vrTZJzFWEkpW+vZ2kYdxvXC+Jsti3GoigZyLRUwCpQfSiFJpUbuuizw0U2lS7343J/bLmCn9CiyrslpQxBreB99Jcp+m28sWrdfvj55HPb9WKegTALL0Cqaq9QfFJDKEkl9wN3d2x3Qvf+PqoiZOZ/k4IvFIg/gk7SxXEbP8CeyuKWHi7C0ukjY+0ZyzINmfwgbtVEMvT/p2cznp2q1wGU173qKAFYBQxmBt4dL3h7H5pzH1jbWmzhN3Rx+bnERRWpnRXmThMPbKdHRFdiFaIhc/OYPnMQtfadDkEFoTQxJhK/rsJEweVjJf2usAn+cT6cv26AVRz0V4DC25OrTvpUjaMgd6lQiBtruC0owCVu+kaRecU1KnoZHmhpA==
+  template:
+    metadata:
+      annotations:
+        sealedsecrets.bitnami.com/cluster-wide: "true"
+      name: cloudflare-account-id
+      namespace: velero
+    type: Opaque

@@ -1,25 +1,20 @@
 apiVersion: velero.io/v1
 kind: BackupStorageLocation
 metadata:
-  name: cloudflare
+  name: default
   namespace: velero
-  annotations:
-    argocd.argoproj.io/ignore-differences: |
-      jsonPointers:
-      - /spec/config/s3Url
 spec:
   backupSyncPeriod: 24h0m0s
   config:
     checksumAlgorithm: ''
     profile: default
-    region: auto
-    s3Url: dummyvalue # will be patched by postsync hook
+    region: eu-central-1
   credential:
     key: cloud
-    name: cloudflare-r2-secret
-  default: true
+    name: aws-s3-creds
+  default: false
   objectStorage:
-    bucket: multi-cluster-backup
+    bucket: coffee-app-test-backups
     prefix: velero
   provider: velero.io/aws
   validationFrequency: 24h0m0s

@@ -1,0 +1,30 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: velero-bsl-patcher
+  namespace: velero
+rules:
+  - apiGroups: ["velero.io"]
+    resources: ["backupstoragelocations"]
+    verbs: ["get", "patch", "update"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: velero-bsl-patcher-binding
+  namespace: velero
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: velero-bsl-patcher
+subjects:
+  - kind: ServiceAccount
+    name: velero-bsl-patcher
+    namespace: velero
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: velero-bsl-patcher
+  namespace: velero
