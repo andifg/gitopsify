@@ -32,7 +32,7 @@ oc -n "$NAMESPACE" label secret "$SECRETNAME" sealedsecrets.bitnami.com/sealed-s
 
 Restart sealed secrets controller
 ```bash
-oc -n  "$NAMESPACE" delete pod -l -l app.kubernetes.io/name=sealed-secrets
+oc -n  "$NAMESPACE" delete pod -l app.kubernetes.io/name=sealed-secrets
 ```
 
 ## Encrypt secret with cert from added key
