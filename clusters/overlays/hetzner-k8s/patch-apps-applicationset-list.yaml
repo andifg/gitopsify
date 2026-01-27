@@ -22,10 +22,14 @@ spec:
         path: components/apps/sealed-secrets/overlays/k8s-default
         namespace: sealed-secrets
         syncWave: "1"
-      - name: kube-prometheus-stack
-        path: components/apps/kube-prometheus-stack/overlays/k8s-default
+      - name: kube-prometheus-stack-crds
+        path: components/apps/kube-prometheus-stack/crds/overlays/k8s-default
         namespace: kube-prometheus-stack
         syncWave: "1"
+      - name: kube-prometheus-stack-app
+        path: components/apps/kube-prometheus-stack/app/overlays/k8s-default
+        namespace: kube-prometheus-stack
+        syncWave: "5"
       - name: multi-cluster-backup
         path: tenants/multi-cluster-backup/overlays/k8s-default
         namespace: sealed-secrets

@@ -1,0 +1,26 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - crd-alertmanagerconfigs.yaml
+  - crd-alertmanagers.yaml
+  - crd-podmonitors.yaml
+  - crd-probes.yaml
+  - crd-prometheusagents.yaml
+  - crd-prometheuses.yaml
+  - crd-prometheusrules.yaml
+  - crd-scrapeconfigs.yaml
+  - crd-servicemonitors.yaml
+  - crd-thanosrulers.yaml
+
+# Prevent kubectl.kubernetes.io/last-applied-configuration
+buildMetadata:
+  - managedByLabel
+
+# Critical ArgoCD protections for CRDs
+commonAnnotations:
+  argocd.argoproj.io/sync-wave: "-10"
+  argocd.argoproj.io/sync-options: Replace=true,Prune=false
+
+commonLabels:
+  app.kubernetes.io/part-of: kube-prometheus-stack

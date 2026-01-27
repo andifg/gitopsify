@@ -11,4 +11,4 @@ helmCharts:
     releaseName: kube-prometheus-stack
     namespace: kube-prometheus-stack
     valuesFile: values.yaml
-    includeCRDs: true
+    includeCRDs: false
