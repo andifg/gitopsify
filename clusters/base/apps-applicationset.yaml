@@ -35,16 +35,16 @@ spec:
   templatePatch: |
     {{- if or .ignoreDifferences .syncOptions }}
     spec:
-      {{- if .ignoreDifferences }}
+      {{ if .ignoreDifferences }}
       ignoreDifferences:
-      {{ toYaml .ignoreDifferences | indent 6 }}
-      {{- end }}
-      {{- if .syncOptions }}
+    {{ toYaml .ignoreDifferences | indent 6 }}
+      {{ end }}
+      {{ if .syncOptions }}
       syncPolicy:
         syncOptions:
         - SkipDryRunOnMissingResource=true
-        {{- range .syncOptions }}
+        {{ range .syncOptions }}
         - {{ . }}
-        {{- end }}
-      {{- end }}
+        {{ end }}
+      {{ end }}
     {{- end }}
