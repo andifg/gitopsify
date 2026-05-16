@@ -22,7 +22,7 @@ spec:
         gitops: operator
     spec:
       project: default
-      syncPolicy:
+      syncPolicy: 
         syncOptions:
         - SkipDryRunOnMissingResource=true
       source:
@@ -33,18 +33,8 @@ spec:
         server: https://kubernetes.default.svc
         namespace: '{{.namespace}}'
   templatePatch: |
-    {{- if or .ignoreDifferences .syncOptions }}
+    {{- if .ignoreDifferences }}
     spec:
-      {{ if .ignoreDifferences }}
       ignoreDifferences:
     {{ toYaml .ignoreDifferences | indent 6 }}
-      {{ end }}
-      {{ if .syncOptions }}
-      syncPolicy:
-        syncOptions:
-        - SkipDryRunOnMissingResource=true
-        {{ range .syncOptions }}
-        - {{ . }}
-        {{ end }}
-      {{ end }}
-    {{- end }}
+    {{- end}}
