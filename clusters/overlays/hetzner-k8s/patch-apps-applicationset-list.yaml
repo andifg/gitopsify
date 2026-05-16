@@ -6,10 +6,10 @@ spec:
   generators:
   - list:
       elements:
-      - name: k8s-dasbhoard
-        path: components/apps/kubernetes-dashboard/overlays/k8s-default
-        namespace: k8s-dashboard
-        syncWave: "6"
+      # - name: k8s-dasbhoard
+      #   path: components/apps/kubernetes-dashboard/overlays/k8s-default
+      #   namespace: k8s-dashboard
+      #   syncWave: "6"
       - name: cert-manager
         path: components/apps/cert-manager/overlays/k8s-default
         namespace: cert-manager
