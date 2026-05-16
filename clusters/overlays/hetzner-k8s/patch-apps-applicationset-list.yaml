@@ -26,6 +26,8 @@ spec:
         path: components/apps/kube-prometheus-stack/crds/overlays/k8s-default
         namespace: kube-prometheus-stack
         syncWave: "1"
+        additionalSyncOptions:
+          - ServerSideApply=true
       - name: kube-prometheus-stack-app
         path: components/apps/kube-prometheus-stack/app/overlays/k8s-default
         namespace: kube-prometheus-stack
