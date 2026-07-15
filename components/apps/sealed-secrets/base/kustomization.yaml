@@ -6,8 +6,8 @@ resources:
 
 helmCharts:
   - name: sealed-secrets
-    repo: https://bitnami-labs.github.io/sealed-secrets/
-    version: 2.17.9
+    repo: https://bitnami.github.io/sealed-secrets
+    version: 2.18.6
     namespace: sealed-secrets
     releaseName: sealed-secrets
     valuesFile: values.yaml
